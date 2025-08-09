@@ -1,0 +1,146 @@
+/* Fuente general */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  animation: fondo 10s infinite alternate;
+}
+
+@keyframes fondo {
+  0% { background: linear-gradient(135deg, #141e30, #243b55); }
+  100% { background: linear-gradient(135deg, #0f2027, #2c5364); }
+}
+
+.formulario-snickers {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input[type="color"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+input[type="text"] {
+  background: #f0f0f0;
+  color: #000;
+}
+
+input[type="color"] {
+  height: 50px;
+  padding: 0;
+  border: 2px solid #fff;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+button[type="reset"] {
+  background-color: #e53935;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 500px) {
+  .botones {
+    flex-direction: column;
+  }
+
+  button {
+    margin: 5px 0;
+  }
+}
+ .btn-fijo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    z-index: 1000;
+  }
+
+  .btn-fijo:hover {
+    background-color: #45a049;
+  }

@@ -1,0 +1,182 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header h4 {
+    font-weight: normal;
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* Sección de productos */
+#productos {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#productos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #222;
+}
+
+/* Estilo individual del producto */
+.producto {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.producto:hover {
+    transform: scale(1.01);
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.producto h3 {
+    font-size: 1.4em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.producto h5 {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.producto p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+/* Responsive */
+@media screen and (min-width: 768px) {
+    .producto {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .producto img {
+        width: 250px;
+        height: auto;
+        margin: 0;
+    }
+
+    .producto label,
+    .producto h3,
+    .producto h5,
+    .producto p,
+    .producto input {
+        display: block;
+    }
+        #enviar {
+    background-color: #4CAF50;   /* Verde */
+    color: white;                /* Texto blanco */
+    padding: 12px 24px;          /* Espaciado interno */
+    border: none;                /* Sin borde */
+    border-radius: 8px;          /* Bordes redondeados */
+    cursor: pointer;             /* Cambia el cursor al pasar por encima */
+    font-size: 16px;             /* Tamaño del texto */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    #enviar:hover {
+    background-color: #45a049;   /* Verde más oscuro al pasar el cursor */
+    transform: scale(1.05);      /* Ligeramente más grande al pasar el cursor */
+    }
+
+    #enviar:active {
+    background-color: #3e8e41;   /* Aún más oscuro al hacer clic */
+    transform: scale(0.98);  
+        /* Ligeramente más pequeño al hacer clic */
+    }
+    .btn-fijo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.btn-fijo:hover {
+  background-color: #45a049;
+}
+
+
+}
