@@ -7,11 +7,24 @@
   <!-- Tipografía Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <!-- Enlace al CSS -->
-  <link rel="stylesheet" href="diseña.css" />
+  <link rel="stylesheet" href="disenna.css" />
 </head>
 <body>
+  
     <a href="index.html" class="btn-fijo">INICIO</a>
   <div class="formulario-snickers">
+    <header id="top">
+
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="diseña.html">Diseña tus snickers</a></li>
+               
+            </ul>
+        </nav>
+    </header>
     <h1>Diseña tus Snickers</h1>
     <h2>¿Cuáles son tus gustos?</h2>
 
@@ -45,23 +58,35 @@
       </div>
     </form>
   </div>
-  <script>
-    enviar.addEventListener("click", function() {
-      if (color.value === "") {
-        alert("Por favor, selecciona un color.");
-        return false;
-      }
-      if (talla.value === "") {
-        alert("Por favor, escribe una talla.");
-        return false;
-      }
-      if (estilo.value === "") {
-        alert("Por favor, selecciona un estilo.");
-        return false;
-      }
-      return true;
+ <script>
+    enviar.addEventListener("click", function (event) {
+        event.preventDefault(); // Evita que se envíe antes de validar
 
-    })
-  </script>
+        if (color.value.trim() === "") {
+            alert("Por favor, selecciona un color.");
+            return false;
+        }
+        if (talla.value.trim() === "") {
+            alert("Por favor, escribe una talla.");
+            return false;
+        }
+        if (estilo.value.trim() === "") {
+            alert("Por favor, selecciona un estilo.");
+            return false;
+        }
+
+        // ✅ Todo correcto
+        const mensaje = document.getElementById('mensaje'); // Asegúrate de tener un elemento con id="mensaje"
+        if (mensaje) {
+            mensaje.textContent = "✅ Diseño enviado";
+        }
+        alert("Diseño enviado con éxito");
+
+        // Si quieres enviar el formulario realmente:
+        // document.getElementById("miFormulario").submit();
+        return true;
+    });
+</script>
+
 </body>
 </html>

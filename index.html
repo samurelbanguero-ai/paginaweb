@@ -12,7 +12,7 @@
 
 <body>
     <header id="top">
->
+
         <form>
         <h1>Almacén de Ventas</h1>
         <h4>Zapatillas</h4>
@@ -121,22 +121,45 @@
     </footer> !-->
 </form>
     <script>
-        const productos = document.querySelectorAll('input[type="checkbox"]');
-        const mensaje = document.getElementById('mensaje');
-        const enviarButton = document.getElementById('enviar');
+    const productos = document.querySelectorAll('input[type="checkbox"]');
+    const email = document.getElementById('email');
+    const telefono = document.getElementById('telefono');
+    const comentario = document.getElementById('comentario');
+    const mensaje = document.getElementById('mensaje');
+    const enviarButton = document.getElementById('enviar');
 
-        enviarButton.addEventListener('click', () => {
-            const algunProductoSeleccionado = Array.from(productos).some(producto => producto.checked);
+    enviarButton.addEventListener('click', (event) => {
+        event.preventDefault(); // evita que se envíe antes de validar
 
-            if (algunProductoSeleccionado) {
-                mensaje.textContent = 'Pedido enviado';
-                alert('Pedido enviado con éxito');
-            } else {
-                mensaje.textContent = 'Debes seleccionar al menos un producto';
-                alert('Debes seleccionar al menos un producto');
-            }
-        });
-    </script>
+        const algunProductoSeleccionado = Array.from(productos).some(producto => producto.checked);
+
+        if (!algunProductoSeleccionado) {
+            mensaje.textContent = 'Debes seleccionar al menos un producto';
+            alert('Debes seleccionar al menos un producto');
+            return;
+        }
+        if (email.value.trim() === "") {
+            alert("Por favor, ingresa un correo electrónico.");
+            return;
+        }
+        if (telefono.value.trim() === "") {
+            alert("Por favor, ingresa un teléfono.");
+            return;
+        }
+        if (comentario.value.trim() === "") {
+            alert("Por favor, escribe un mensaje.");
+            return;
+        }
+
+        // ✅ Si todo está correcto
+        mensaje.textContent = 'Pedido enviado';
+        alert('Pedido enviado con éxito');
+
+        // Si quieres enviar el formulario realmente:
+        document.getElementById("miFormulario").submit();
+    });
+</script>
+
 
 </body>
 

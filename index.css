@@ -8,7 +8,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f2f2f2;
-    color: #333;
+    color: #fa0000;
     line-height: 1.6;
 }
 
@@ -33,12 +33,30 @@ header h4 {
 }
 
 /* Menú de navegación */
+header#top {
+  position: fixed;       /* Hace que la barra quede fija */
+  top: 0;                /* Se pega arriba */
+  left: 0;               /* Se alinea a la izquierda */
+  width: 100%;           /* Ocupa todo el ancho */
+  background-color: #000000; /* Fondo blanco para que se vea */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil */
+  z-index: 1000;         /* Para que esté por encima de otros elementos */
+  padding: 10px 20px;    /* Espaciado interno */
+}
+
+/* Para que el contenido no quede oculto debajo del header fijo, agrega padding-top en el body o contenedor principal: */
+
+body {
+  padding-top: 80px; /* Ajusta este valor según la altura del header */
+}
+
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
+    
 }
 
 nav ul li {

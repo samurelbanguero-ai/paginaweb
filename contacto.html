@@ -8,8 +8,22 @@
   <link rel="stylesheet" href="contacto.css">
 </head>
 <body>
+  
   <section class="seccion-contacto">
     <a href="index.html" class="btn-fijo">INICIO</a>
+     <header id="top">
+
+        
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="diseña.html">Diseña tus snickers</a></li>
+               
+            </ul>
+        </nav>
+    </header>
    
     <div class="contenedor">
       <h2>Contáctanos</h2>
@@ -35,21 +49,30 @@
     </div>
   </section>
   <script>
-    enviar.addEventListener("click", function() {
-        if (email.value === "") {
-            alert("Por favor, ingresa un correo electrónico.");
-            return false;
-        }
-        if (telefono.value === "") {
-            alert("Por favor, ingresa un teléfono.");
-            return false;
-        }
-        if (mensaje.value === "") {
-            alert("Por favor, escribe un mensaje.");
-            return false;
-        }
-        return true;
-    })
-  </script>
+  enviar.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    // Validaciones
+    if (email.value === "") {
+      alert("Por favor, ingresa un correo electrónico.");
+      return false;
+    }
+    if (telefono.value === "") {
+      alert("Por favor, ingresa un teléfono.");
+      return false;
+    }
+    if (mensaje.value === "") {
+      alert("Por favor, escribe un mensaje.");
+      return false;
+    }
+
+    // Si pasa todas las validaciones:
+    alert("¡Datos enviados correctamente!");
+
+    // Enviar el formulario
+    document.getElementById("miFormulario").submit();
+  });
+</script>
+
 </body>
 </html>
